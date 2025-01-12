@@ -1,0 +1,28 @@
+[workspace]
+resolver = "1"
+members = [
+    "crates/redp-core", 
+    "crates/codegen",
+    "crates/redp-cli"
+]
+
+[workspace.dependencies]
+rayon = "1.9.0"
+polars = { version = "0.40.0", features = [
+    "lazy",
+    "is_in",
+    "concat_str",
+    "strings",
+    "dtype-struct",
+    "round_series",
+] }
+chrono = "0.4.35"
+rust_xlsxwriter = { version = "0.79.4", features = ["chrono", "zlib"] }
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[profile.release]
+codegen-units = 1
+strip = "symbols"
+lto = "fat"
+panic = "abort"

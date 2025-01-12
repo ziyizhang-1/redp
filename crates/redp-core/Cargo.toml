@@ -1,0 +1,25 @@
+[package]
+name = "redp-core"
+version = "0.4.1"
+edition = "2021"
+authors = ["Ziyi Zhang <ziyi.zhang@intel.com>"]
+license = "Apache-2.0"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+rayon = { workspace = true }
+polars = { workspace = true }
+chrono = { workspace = true }
+rust_xlsxwriter = { workspace = true }
+polars-arrow = "0.40.0"
+polars-expr = "0.40.0"
+polars-plan = "0.40.0"
+polars-utils = "0.40.0"
+ndarray = { version = "0.16.1", features = ["rayon"] }
+serde = { version = "1.0.197", features = ["derive"] }
+quick-xml = { version = "0.37.1", features = ["serialize"] }
+regex = "1.10.3"
+lazy_static = "1.4.0"
+tdigest = "0.2.3"
+grep = "0.3.1"

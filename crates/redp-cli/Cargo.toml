@@ -1,0 +1,21 @@
+[package]
+name = "redp"
+version = "0.4.1"
+edition = "2021"
+authors = ["Ziyi Zhang <ziyi.zhang@intel.com>"]
+license = "Apache-2.0"
+
+[features]
+default = ["mimalloc"]
+mimalloc = ["dep:mimalloc"]
+jemalloc = ["dep:jemallocator"]
+
+[dependencies]
+mimalloc = { version = "*", default-features = false, optional = true }
+jemallocator = { version = "*", default-features = false, optional = true }
+clap = { version = "4.5.21", features = ["derive"] }
+redp-core = { version = "*", path = "../redp-core" }
+chrono = { workspace = true }
+rayon = { workspace = true }
+polars = { workspace = true }
+rust_xlsxwriter = { workspace = true }
